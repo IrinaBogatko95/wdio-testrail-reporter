@@ -4,6 +4,8 @@ Pushes test results into Testrail system.
 
 ## Precondition
 
+- Add *testrail-reporter* folder to the AT solution
+
 In TestRail:
  - Create a new test suite with test cases that you will automate.
  ![Adding a test suite](/images/test_cases.png)
@@ -39,7 +41,7 @@ Ensure that your testrail installation API is enabled and generate your API keys
 - Add reporter to wdio.conf.js:
 
 ```Javascript
-let WdioTestRailReporter = require('../../automation/wdio-testrail-reporter/build/reporter').default;
+let WdioTestRailReporter = require('../../automation/wdio-testrail-reporter/testrail-reporter/reporter').default;
 
 ...
 
