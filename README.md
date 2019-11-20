@@ -5,13 +5,10 @@ Pushes test results into Testrail system.
 ## Precondition
 
 In TestRail:
- - Create new test suite with test cases, that you will be automate.
+ - Create a new test suite with test cases that you will automate.
  ![Adding a test suite](/images/test_cases.png)
- - Create new test run for each instance. For ex., if you run your tests on Chrome, Edge and Firefox browser, you have to add three runs for each.
+ - Create a new test run for each run instance. For ex., if you run your tests on Chrome, Edge and Firefox browser, you have to add three runs for each.
   ![Adding a test suite](/images/test_runs.png)
-  
-In solution:
-
  
 ## Usage
 Ensure that your testrail installation API is enabled and generate your API keys. See http://docs.gurock.com/
@@ -35,7 +32,7 @@ Create wdio.testraildata.json file and set configs for testrail runs:
  
  where:
  **smoke** and **regression**: *string*  names of suites,
- **runIds** ids of runs in testrail related to defined instances.
+ **runIds** IDs of runs in the testtrail associated with specific instances (you added mentioned runs in *Precondition*).
 
 
 Add reporter to wdio.conf.js:
@@ -55,16 +52,6 @@ let WdioTestRailReporter = require('./packages/wdio-testrail-reporter/lib/wdio-t
 
 ```
 
-
-Mark your mocha test names with ID of Testrail test cases. Ensure that your case ids are well distinct from test descriptions.
- 
-```Javascript
-it("C123 Authenticate with invalid user", . . .
-it("Authenticate a valid user C321", . . .
-```
-
-Only passed or failed tests will be published. Skipped or pending tests will not be published resulting in a "Pending" status in testrail test run.
-
 ## Options
 
 **testRailUrl**: *string* domain name of your Testrail instance (e.g. for a hosted instance instance.testrail.net)
@@ -75,10 +62,23 @@ Only passed or failed tests will be published. Skipped or pending tests will not
 
 **configFilePath**: *string* file path to TestRail config file
 
+
+## Preparing tests
+
+Mark your mocha test names with ID of Testrail test cases. Ensure that your case ids are well distinct from test descriptions.
+ 
+```Javascript
+it("C123 Authenticate with invalid user", . . .
+it("Authenticate a valid user C321", . . .
+```
+
+Only passed or failed tests will be published. Skipped or pending tests will not be published resulting in a "Pending" status in testrail test run.
+
+
 ## Running tests
 
-When you run your tests, please specify in test script the suite name, where you run your tests. Suite name should be equal to name in *wdio.testrail.json* file.
-For ex.,
+When you run your tests, please indicate in the test script the name of the suite, where you run your tests. Suite name must match the name in *wdio.testrail.json* file.
+For ex. ,
 
 wdio.testrail.json - 
 
@@ -88,7 +88,7 @@ wdio.testrail.json -
     "runIds": {
       "Firefox": 11111,
       "Edge": 22222,
-      "Chrome" : 33333
+      "chrome" : 44444
     }
   },
   "regression": {
@@ -98,5 +98,5 @@ wdio.testrail.json -
   }
  ```
 Test script - 
-**"test":** "wdio configs/wdio/wdio.config.js --suite smoke"
+"test": "wdio configs/wdio/wdio.config.js **--suite smoke**"
 
