@@ -30,10 +30,12 @@ Create wdio.testraildata.json file and set configs for testrail runs:
   }
  ```
  
- where:
+ where
+ 
  **smoke** and **regression**: *string*  names of suites
  
  **runIds** IDs of runs in the testtrail associated with specific instances (you added mentioned runs in *Precondition*)
+
 
 
 Add reporter to wdio.conf.js:
