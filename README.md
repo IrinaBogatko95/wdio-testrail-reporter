@@ -6,9 +6,9 @@ Pushes test results into Testrail system.
 
 In TestRail:
  - Create new test suite with test cases, that you will be automate.
- ![Adding a test suite](/images/logo.png)
+ ![Adding a test suite](/images/test_cases.png)
  - Create new test run for each instance. For ex., if you run your tests on Chrome, Edge and Firefox browser, you have to add three runs for each.
-  ![Adding a test suite](/images/logo.png)
+  ![Adding a test suite](/images/test_runs.png)
   
 In solution:
 
