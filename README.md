@@ -13,7 +13,7 @@ In TestRail:
 ## Usage
 Ensure that your testrail installation API is enabled and generate your API keys. See http://docs.gurock.com/
 
-Create wdio.testraildata.json file and set configs for testrail runs:
+- Create wdio.testraildata.json file and set configs for testrail runs:
  ```json
  {
   "smoke": {
@@ -36,9 +36,7 @@ Create wdio.testraildata.json file and set configs for testrail runs:
  
  **runIds** IDs of runs in the testtrail associated with specific instances (you added mentioned runs in *Precondition*)
 
-
-
-Add reporter to wdio.conf.js:
+- Add reporter to wdio.conf.js:
 
 ```Javascript
 let WdioTestRailReporter = require('../../automation/testrail-reporter/reporter').default;
