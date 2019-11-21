@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const logger_1 = require("@wdio/logger");
 const reporter_1 = require("@wdio/reporter");
 const node_fetch_1 = require("node-fetch");
-const routes_1 = require("../routes");
+const routes_1 = require("./routes");
 const fs = require('fs');
 
 class TestRailReporter extends reporter_1.default {
